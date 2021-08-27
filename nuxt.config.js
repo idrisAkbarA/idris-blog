@@ -34,6 +34,7 @@ export default {
   plugins: [
     { src: './plugins/vue-window-size.js', mode: 'client' },
     { src: './plugins/vuescroll.js', mode: 'client' },
+    { src: './plugins/vuezoomer.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

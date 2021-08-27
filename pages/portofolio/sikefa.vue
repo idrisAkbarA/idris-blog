@@ -20,6 +20,10 @@
           <h4>Role</h4>
           <p class="caption">Mobile App Developer</p>
         </div>
+        <div>
+          <h4>Tech</h4>
+          <p class="caption">Flutter</p>
+        </div>
       </div>
       <div class="grid-inner-layout mr-4 ml-4">
         <div class="mr-4 ml-4 d-flex ">
@@ -41,18 +45,48 @@
             class="d-flex fill-height justify-space-between"
             style="position:relative"
           >
-            <v-img
-              style="height:100%; position:absolute"
-              max-width="200px"
-              contain
-              src="/portofolio/sikefa/splash-screen.jpg"
-            ></v-img>
-            <v-img
-              style="height:100%; position:absolute"
-              max-width="200px"
-              contain
-              src="/portofolio/sikefa/home.jpg"
-            ></v-img>
+            <v-row>
+              <v-col>
+                <v-img
+                  style="height:100%; position:absolute"
+                  max-width="200px"
+                  contain
+                  @click="openPictureDialog('/portofolio/sikefa/splash-screen.jpg')"
+                  src="/portofolio/sikefa/splash-screen.jpg"
+                ></v-img>
+
+              </v-col>
+              <v-col>
+                <v-img
+                  @click="openPictureDialog('/portofolio/sikefa/home.jpg')"
+                  style="height:100%; position:absolute"
+                  max-width="200px"
+                  contain
+                  src="/portofolio/sikefa/home.jpg"
+                ></v-img>
+
+              </v-col>
+              <v-col>
+                <v-img
+                  @click="openPictureDialog('/portofolio/sikefa/result.jpg')"
+                  style="height:100%; position:absolute"
+                  max-width="200px"
+                  contain
+                  src="/portofolio/sikefa/result.jpg"
+                ></v-img>
+
+              </v-col>
+              <v-col>
+                <v-img
+                  @click="openPictureDialog('/portofolio/sikefa/questions.jpg')"
+                  style="height:100%; position:absolute"
+                  max-width="200px"
+                  contain
+                  src="/portofolio/sikefa/questions.jpg"
+                ></v-img>
+
+              </v-col>
+            </v-row>
           </div>
         </div>
       </div>
@@ -82,6 +116,7 @@
                   <v-icon small>mdi-email</v-icon> idrisakbaradyusman@outlook.com <br>
                   <v-icon small>mdi-linkedin</v-icon> <a
                     class="white--text"
+                    style="text-decoration: none;"
                     href="http://www.linkedin.com/in/idris-akbar-adyusman-41336b207"
                     target="_blank"
                   >http://www.linkedin.com/in/idris-akbar-adyusman-41336b207</a> <br>
@@ -91,7 +126,7 @@
               <div class="ml-4">
                 <p class="caption">
 
-                  <v-icon small>mdi-phone</v-icon> +62 85279096428 <br>
+                  <v-icon small>mdi-phone</v-icon> +62 852 7909 6428 <br>
                   <v-icon small>mdi-whatsapp</v-icon> +62 812 7555 3496 <br>
 
                 </p>
@@ -104,9 +139,43 @@
       </div>
 
     </v-container>
+    <v-dialog
+      overlay-color="orange"
+      width="700px"
+      v-model="dialogPicture"
+    >
+      <v-card>
+
+        <v-zoomer
+          v-if="dialogPicture"
+          style="width: 700px; height: 600px;"
+        >
+          <img
+            :src="pictureAddress"
+            style="object-fit: contain; width: 100%; height: 100%;"
+          >
+        </v-zoomer>
+      </v-card>
+    </v-dialog>
 
   </v-container>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      dialogPicture: false,
+      pictureAddress: '',
+    }
+  },
+  methods: {
+    openPictureDialog(address) {
+      this.pictureAddress = address
+      this.dialogPicture = true
+    },
+  },
+}
+</script>
 <style>
 .grid-inner-layout {
   width: 100%;
