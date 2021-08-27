@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - idris-blog',
-    title: 'idris-blog',
+    titleTemplate: '%s - Idris',
+    title: 'Idris Akbar A',
     htmlAttrs: {
       lang: 'en'
     },

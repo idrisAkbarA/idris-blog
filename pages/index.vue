@@ -17,7 +17,7 @@
         <v-hover v-slot="{ hover }">
 
           <v-card
-            to="/portofolio-1"
+            to="/portofolio/sikefa"
             flat
             max-width="200px"
             min-height="300px"
