@@ -1,6 +1,7 @@
 <template>
   <v-container
     fluid
+    v-if="windowWidth>600"
     class="grid-outer-layout"
   >
     <v-container class="d-flex">
@@ -48,6 +49,7 @@
             <v-row>
               <v-col>
                 <v-img
+                  class="gallery"
                   style="height:100%; position:absolute"
                   max-width="200px"
                   contain
@@ -58,6 +60,7 @@
               </v-col>
               <v-col>
                 <v-img
+                  class="gallery"
                   @click="openPictureDialog('/portofolio/sikefa/home.jpg')"
                   style="height:100%; position:absolute"
                   max-width="200px"
@@ -68,6 +71,7 @@
               </v-col>
               <v-col>
                 <v-img
+                  class="gallery"
                   @click="openPictureDialog('/portofolio/sikefa/result.jpg')"
                   style="height:100%; position:absolute"
                   max-width="200px"
@@ -78,6 +82,7 @@
               </v-col>
               <v-col>
                 <v-img
+                  class="gallery"
                   @click="openPictureDialog('/portofolio/sikefa/questions.jpg')"
                   style="height:100%; position:absolute"
                   max-width="200px"
@@ -108,39 +113,15 @@
           <div style="width:300px">
             <h4>Student of Sultan Syarif Kasim Riau Islamic State University</h4>
           </div>
-          <div>
-            <h4>Contacts</h4>
-            <div class="d-flex">
-              <div>
-                <p class="caption">
-                  <v-icon small>mdi-email</v-icon> idrisakbaradyusman@outlook.com <br>
-                  <v-icon small>mdi-linkedin</v-icon> <a
-                    class="white--text"
-                    style="text-decoration: none;"
-                    href="http://www.linkedin.com/in/idris-akbar-adyusman-41336b207"
-                    target="_blank"
-                  >http://www.linkedin.com/in/idris-akbar-adyusman-41336b207</a> <br>
-                </p>
+          <contacts></contacts>
 
-              </div>
-              <div class="ml-4">
-                <p class="caption">
-
-                  <v-icon small>mdi-phone</v-icon> +62 852 7909 6428 <br>
-                  <v-icon small>mdi-whatsapp</v-icon> +62 812 7555 3496 <br>
-
-                </p>
-
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>
 
     </v-container>
     <v-dialog
-      overlay-color="orange"
+      overlay-color="deep-orange darken-1"
       width="700px"
       v-model="dialogPicture"
     >
@@ -159,13 +140,149 @@
     </v-dialog>
 
   </v-container>
+  <v-container
+    v-else
+    class="d-flex"
+  >
+    <div
+      class="mr-4 ml-4"
+      style="width:100%"
+    >
+      <div class="d-flex justify-space-between">
+        <div style="width:200px">
+          <h4>SIKeFA</h4>
+          <p class="caption">(Sistem Informasi Kesahatan Fisik Anak)</p>
+        </div>
+        <div>
+          <h4>Project 1 of 5</h4>
+        </div>
+
+      </div>
+      <div>
+        <h4>Gallery</h4>
+        <div class="d-flex ">
+          <vue-scroll :ops="scrollOps">
+            <v-row class="flex-nowrap scroll-x:hidden">
+              <v-col>
+                <v-img
+                  class="gallery"
+                  max-width="200px"
+                  contain
+                  @click="openPictureDialog('/portofolio/sikefa/splash-screen.jpg')"
+                  src="/portofolio/sikefa/splash-screen.jpg"
+                ></v-img>
+              </v-col>
+              <v-col>
+                <v-img
+                  class="gallery"
+                  @click="openPictureDialog('/portofolio/sikefa/home.jpg')"
+                  max-width="200px"
+                  contain
+                  src="/portofolio/sikefa/home.jpg"
+                ></v-img>
+
+              </v-col>
+              <v-col>
+                <v-img
+                  class="gallery"
+                  @click="openPictureDialog('/portofolio/sikefa/result.jpg')"
+                  max-width="200px"
+                  contain
+                  src="/portofolio/sikefa/result.jpg"
+                ></v-img>
+
+              </v-col>
+              <v-col>
+                <v-img
+                  class="gallery"
+                  @click="openPictureDialog('/portofolio/sikefa/questions.jpg')"
+                  max-width="200px"
+                  contain
+                  src="/portofolio/sikefa/questions.jpg"
+                ></v-img>
+
+              </v-col>
+            </v-row>
+          </vue-scroll>
+        </div>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <p class="caption">SIKeFA (Sistem Informasi Kesahatan Fisik Anak) was an assigment project for mobile application subject
+          in my university. This App provides advices for parents about what should they do to the current health status of their child
+          by answering certain questions according to their child age.
+        </p>
+      </div>
+      <div>
+        <h4>Year</h4>
+        <p class="caption">2019</p>
+      </div>
+      <div>
+        <h4>Role</h4>
+        <p class="caption">Mobile App Developer</p>
+      </div>
+      <div>
+        <h4>Tech</h4>
+        <p class="caption">Flutter</p>
+      </div>
+      <contacts :isMobile="true"></contacts>
+    </div>
+    <v-dialog
+      overlay-color="deep-orange darken-1"
+      width="100%"
+      v-model="dialogPicture"
+    >
+      <v-card>
+
+        <v-zoomer
+          v-if="dialogPicture"
+          style="width: 100%; height: 600px;"
+        >
+          <img
+            :src="pictureAddress"
+            style="object-fit: contain; width: 100%; height: 100%;"
+          >
+        </v-zoomer>
+      </v-card>
+    </v-dialog>
+  </v-container>
 </template>
 <script>
 export default {
+  head() {
+    return {
+      title: this.title,
+    }
+  },
+  created() {
+    this.$store.commit('page/setTitle', this.title)
+  },
+  computed: {
+    isMobile() {
+      return this.windowWidth
+    },
+  },
   data() {
     return {
+      title: 'SIKeFA',
       dialogPicture: false,
       pictureAddress: '',
+      scrollOps: {
+        scrollPanel: {
+          easing: 'easeInQuad',
+          speed: 800,
+          scrollingY: false,
+          scrollingX: true,
+        },
+        bar: {
+          background: '#000',
+        },
+        vuescroll: {
+          mode: 'native',
+          wheelScrollDuration: 0,
+          locking: true,
+        },
+      },
     }
   },
   methods: {
@@ -177,6 +294,9 @@ export default {
 }
 </script>
 <style>
+.gallery {
+  cursor: pointer;
+}
 .grid-inner-layout {
   width: 100%;
   height: 100%;
