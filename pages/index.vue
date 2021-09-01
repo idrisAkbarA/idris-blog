@@ -17,7 +17,7 @@
         <v-hover v-slot="{ hover }">
 
           <v-card
-            to="/portofolio/sikefa"
+            to="/portfolio/sikefa"
             flat
             max-width="200px"
             min-height="300px"
@@ -26,7 +26,7 @@
             class="mx-auto d-flex flex-column justify-end pa-4 "
           >
             <div>
-              <h1>Portofolio</h1>
+              <h1>Portfolio</h1>
             </div>
           </v-card>
         </v-hover>
@@ -41,7 +41,7 @@
         <v-hover v-slot="{ hover }">
 
           <v-card
-            to="/about"
+            to="/about-me"
             flat
             max-width="200px"
             min-height="300px"
