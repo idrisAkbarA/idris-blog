@@ -86,6 +86,13 @@
 
   </v-container>
 </template>
+<script>
+export default {
+  created() {
+    console.log(this)
+  },
+}
+</script>
 
 <style lang="sass">
 $hoverColor: #FF9800
@@ -106,6 +113,6 @@ $hoverColor: #FF9800
   -moz-box-shadow: 15px 15px 0px $hoverColor !important
   -webkit-box-shadow: 15px 15px 0px $hoverColor !important
   box-shadow: 15px 15px 0px $hoverColor !important
-</style>>
+</style>
 
 

@@ -23,7 +23,7 @@
             class="mr-1"
             outlined
             small
-            to="/portfolio"
+            to="/portfolio/sikefa"
           >
             <v-icon left>mdi-format-list-text</v-icon>Portfolio
           </v-btn>
@@ -32,7 +32,7 @@
             small
             to="/blog"
           >
-            <v-icon left>mdi-account</v-icon>Blog
+            <v-icon left>mdi-post</v-icon>Blog
           </v-btn>
         </div>
         <div

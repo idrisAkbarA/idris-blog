@@ -32,6 +32,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: './plugins/blog-list.js', mode: 'client' },
     { src: './plugins/vue-window-size.js', mode: 'client' },
     { src: './plugins/vuescroll.js', mode: 'client' },
     { src: './plugins/vuezoomer.js', mode: 'client' },

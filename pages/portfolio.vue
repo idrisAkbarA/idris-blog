@@ -12,10 +12,7 @@
           flat
           tile
         >
-          <v-img
-            max-width="70"
-            :src="'/images/LogoUIN.png'"
-          ></v-img>
+
           <v-card-text class="d-flex flex-column justify-start align-start">
             <div class="d-flex justify-space-between">
               <v-btn
