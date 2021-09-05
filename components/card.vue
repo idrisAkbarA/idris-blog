@@ -1,21 +1,19 @@
 <template>
-  <v-hover v-slot="{ hover }">
 
-    <v-card
-      :to="to"
-      flat
-      max-width="100%"
-      min-height="100%"
-      tile
-      :class="hover?'dropshadowclass deep-orange--text text--lighten-5':'nodropshadowclass'"
-      class="mx-auto d-flex flex-column justify-end pa-4 "
-    >
-      <div>
-        <span>{{tag}}</span>
-        <h2>{{title}}</h2>
-      </div>
-    </v-card>
-  </v-hover>
+  <v-card
+    :to="to"
+    flat
+    max-width="100%"
+    min-height="100%"
+    tile
+    class="mx-auto d-flex dropshadowclass flex-column justify-end pa-4 "
+  >
+    <div>
+      <span>{{tag}}</span>
+      <h2>{{title}}</h2>
+    </div>
+  </v-card>
+
 </template>
 
 <script>
@@ -30,17 +28,18 @@ export default {
 
 <style lang="sass">
 $hoverColor: #FF9800
-.card-menu-heading
-  font-family: 'Playfair Display', serif
-.dropshadowclass
 
+.dropshadowclass:hover
+
+  background: #212121 !important
+  color: #FF8A65
   border: 0px white !important
   transition: 0.5s ease
-  -moz-box-shadow: 0px
-  -webkit-box-shadow: 0px
-  box-shadow: 0px
+  -moz-box-shadow: none
+  -webkit-box-shadow: none
+  box-shadow: none !important
 
-.nodropshadowclass
+.dropshadowclass
   border: solid 4px white !important
   background: rgba(255, 255, 255, 0.15) !important
   transition: 0.5s ease

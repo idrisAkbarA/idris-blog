@@ -362,14 +362,6 @@ export default {
   right: 6em;
   background-image: rgba(255, 153, 0, 0.527);
 }
-.overlay-pic-color {
-  /* background-image: linear-gradient(
-    to top,
-    rgba(255, 158, 128, 0) 0%,
-    rgba(255, 158, 128, 0.5) 100%
-  ); */
-  /* background-image: rgba(255, 153, 0, 0.9); */
-}
 .vertical-line {
   border-left: 4px solid white;
 }
