@@ -101,11 +101,6 @@
     </v-card>
   </v-container>
 </template>
-<router>
-  {
-    name: ‘Laravel Write-trough Cache with Observer’
-  }
-</router>
 <script>
 export default {
   head() {
