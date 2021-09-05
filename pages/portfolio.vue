@@ -52,24 +52,59 @@
         </v-card>
         <v-list dense>
           <v-list-item
-            v-for="(page, i) in pages"
-            :key="'key-' + i"
-            :to="page.to"
-            :two-line="page.subtitle ? true : false"
+            to="/portfolio/sikefa"
+            two-line
             router
             exact
           >
-            <v-avatar>{{i+1}}</v-avatar>
+            <v-avatar>1</v-avatar>
 
             <v-list-item-content>
-              <h5>{{  page.title }}</h5>
+              <h5>SIKeFa</h5>
               <v-list-item-title></v-list-item-title>
-              <p
-                class="caption"
-                v-if="page.subtitle"
-              >{{
-                page.subtitle
-              }}</p>
+              <p class="caption">Flutter</p>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            to="/portfolio/uin-suska-riau-scholarship-app"
+            two-line
+            router
+            exact
+          >
+            <v-avatar>2</v-avatar>
+
+            <v-list-item-content>
+              <h5>UIN Suska Riau Scholarship App</h5>
+              <v-list-item-title></v-list-item-title>
+              <p class="caption">PHP Laravel, Vue SPA, MySql</p>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            to="/portfolio/uin-suska-riau-post-graduate-program-registration-and-cat-app"
+            two-line
+            router
+            exact
+          >
+            <v-avatar>3</v-avatar>
+
+            <v-list-item-content>
+              <h5>UIN Suska Riau Post Graduate Program Registration and CAT App</h5>
+              <v-list-item-title></v-list-item-title>
+              <p class="caption">PHP Laravel, Nuxt SPA, MySql</p>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            to="/portfolio/e-health"
+            two-line
+            router
+            exact
+          >
+            <v-avatar>4</v-avatar>
+
+            <v-list-item-content>
+              <h5>E-Health</h5>
+              <v-list-item-title></v-list-item-title>
+              <p class="caption">PHP Laravel, Nuxt SPA, MySql</p>
             </v-list-item-content>
           </v-list-item>
         </v-list>
