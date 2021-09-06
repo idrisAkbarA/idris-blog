@@ -65,22 +65,6 @@
         :title="item.title"
         :to="item.path"
       ></card>
-
-      <!-- <card
-        tag="Laravel"
-        title="Laravel Write-trought Cache with Observer"
-      ></card>
-
-      <card
-        tag="Laravel"
-        title="Laravel Write-trought Cache with Observer"
-      ></card>
-
-      <card
-        tag="Laravel"
-        title="Laravel Write-trought Cache with Observer"
-      ></card> -->
-
     </div>
     <v-card
       v-if="!$vuetify.breakpoint.mobile"
