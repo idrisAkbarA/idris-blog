@@ -1,12 +1,5 @@
 <template>
-  <v-container
-    max-width="200px"
-    class="fill-height"
-    :style="$vuetify.breakpoint.mobile?'width:100%':'width:60%'"
-  >
-    <!-- <v-row>
-      <h1>Hello</h1>
-    </v-row> -->
+  <v-container class=" fill-height containerwidth ">
     <v-row>
       <v-col
         cols="12"
@@ -105,6 +98,13 @@ $hoverColor: #FF9800
   -moz-box-shadow: 15px 15px 0px $hoverColor !important
   -webkit-box-shadow: 15px 15px 0px $hoverColor !important
   box-shadow: 15px 15px 0px $hoverColor !important
+
+.containerwidth
+  width: 60% !important
+
+@media (min-width: 600px)
+  .containerwidth
+    width: 100%
 </style>
 
 
